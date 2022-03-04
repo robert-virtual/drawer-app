@@ -1,9 +1,17 @@
-import { TouchableOpacity, Button, Text, StyleSheet, View } from "react-native";
+import {
+  TextInput,
+  TouchableOpacity,
+  Button,
+  Text,
+  StyleSheet,
+  View,
+} from "react-native";
 
 export function Login({ navigation }) {
   return (
     <View style={styles.container}>
       <Text>Login</Text>
+
       <Button
         title="Login"
         onPress={() => {

@@ -1,12 +1,25 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { Home, Ajustes } from "../pages";
-const Drawer = createDrawerNavigator();
+import { NavigationContainer } from "@react-navigation/native";
+import { CustomDrawerContent, LogoTitle } from "../components";
+import { Home, Ajustes, Cart } from "../pages";
 
+const Drawer = createDrawerNavigator();
 export function DrawerNav() {
   return (
-    <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={Home} />
-      <Drawer.Screen name="Ajustes" component={Ajustes} />
-    </Drawer.Navigator>
+    <NavigationContainer>
+      <Drawer.Navigator
+        drawerContent={(props) => <CustomDrawerContent {...props} />}
+      >
+        <Drawer.Screen
+          options={{
+            headerTitle: () => <LogoTitle />,
+          }}
+          name="Home"
+          component={Home}
+        />
+        <Drawer.Screen name="Ajustes" component={Ajustes} />
+        <Drawer.Screen name="Cart" component={Cart} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
