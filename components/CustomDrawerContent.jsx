@@ -15,6 +15,10 @@ export function CustomDrawerContent(props) {
         label={"Ayuda"}
         onPress={() => Linking.openURL("https://www.google.com")}
       />
+      <DrawerItem
+        label={"Cuenta"}
+        onPress={() => props.navigation.navigate("Login")}
+      />
     </DrawerContentScrollView>
   );
 }
